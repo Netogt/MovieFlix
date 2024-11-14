@@ -2,18 +2,21 @@
     padding: 20px 0;
     /* background-color: green; */
     
-    .movieList {
-        display: flex;
-        margin-top: 10px;
-        list-style: none;
-        align-items: center;
-        gap: 30px;
-        overflow-x: scroll;
+    .movieList {        
         position: relative;
 
-        &::-webkit-scrollbar{
-            background: none;
+        div{
+            display: flex;
+            margin-top: 10px;
+            list-style: none;
+            align-items: center;
+            gap: 30px;
+            overflow-x: scroll;
+            &::-webkit-scrollbar{
+                background: none;
+            }
         }
+       
         button{
             height: 300px;
             width: 20px;
