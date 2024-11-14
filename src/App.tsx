@@ -1,13 +1,13 @@
-
+import SectionMovies from './components/SectionMovies'
+import SlideMovies from './components/SlideMovies'
 import './css/App.css'
 
-function App() {
-
-  return (
-    <>
-  
-    </>
-  )
+export default function App() {
+   
+    return (
+        <>
+            <SlideMovies />
+            <SectionMovies />
+        </>
+    )
 }
-
-export default App
