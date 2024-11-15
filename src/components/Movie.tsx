@@ -11,7 +11,6 @@ export default function Movie({ movie }: any) {
                 </span>
                 <p className="overViewMovie">
                     {overview}
-                   
                 </p>
                 <p>continua...</p>
             </div>
