@@ -1,11 +1,11 @@
 import { useState } from "react";
 import PosterSlideMovie from "./PosterSlideMovie";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import "../css/SlideMoveis.css";
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+
 
 
 export default function SlideMovies() {
