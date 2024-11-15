@@ -1,18 +1,10 @@
-.slideMovies {
-  height: min(80vh, 595px);
+.swiper {
   width: 100%;
-  /* background-color: rgb(0, 0, 0); */
-  gap: 20px;
-  display: flex;
-  overflow-x: scroll;
 
-  .postSlideMovie{
+  .swiper-slide{
+    height: 520px;
     border-radius: 15px;
-    /* height: 100%; */
-    min-width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 920px;
     overflow: hidden;
     position: relative;
   }
@@ -20,16 +12,14 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    /* top: 0;
-    left: 0; */
+    top: 0;
+    left: 0;
     padding: 0 30px;
-    background-color: rgba(102, 51, 153, 0.322);
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  img{
-    /* display: none; */
+  .swiper-slide img{
     height: 520px;
     object-fit: contain;
 

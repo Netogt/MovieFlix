@@ -1,57 +1,50 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import PosterSlideMovie from "./PosterSlideMovie";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import "../css/SlideMoveis.css";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
 
 export default function SlideMovies() {
     const [posterSlide, setPosterSlide] = useState(fakeResponse)
-    const slide = useRef(null)
 
-    const moveSlide = (): void => {
-        const interval = setInterval(() => {
-            if (!slide.current) clearInterval(interval)
-            if (!slide.current) return
-            const container: HTMLElement = slide.current
-            let move = -4600
-            if (container.scrollLeft <= container.scrollWidth - (container.getBoundingClientRect().width * 2)) {
-                move = 945
-            }
-            container.scrollBy({
-                left: move,
-                behavior: 'smooth'
-            })
-        }, 2000)
-    }
-
-    useEffect(() => {
-        moveSlide()
-    }, [])
     return (
-        <section className="slideMovies" ref={slide}>
-            {posterSlide.map(({ id, backdrop_path, title, original_name, overview, release_date, vote_average }) =>
-                <PosterSlideMovie
-                    key={id}
-                    backdrop_path={backdrop_path}
-                    title={title}
-                    original_name={original_name}
-                    overview={overview}
-                    release_date={release_date}
-                    vote_average={vote_average}
-                />
-            )}
-
-            <PosterSlideMovie
-                backdrop_path={posterSlide[0].backdrop_path}
-                title={posterSlide[0].title}
-                original_name={posterSlide[0].original_name}
-                overview={posterSlide[0].overview}
-                release_date={posterSlide[0].release_date}
-                vote_average={posterSlide[0].vote_average}
-            />
-
-
-
-        </section>
-    )
+        <>
+            <Swiper
+                slidesPerView={'auto'}
+                spaceBetween={20}
+                centeredSlides={true}
+                loop={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                modules={[Autoplay, Pagination]}
+                className="mySwiper"
+            >
+                {
+                    posterSlide.map(({ backdrop_path, title, original_name, overview, release_date, vote_average }, index) =>
+                        <SwiperSlide key={index}>
+                            <PosterSlideMovie
+                                backdrop_path={backdrop_path}
+                                title={title}
+                                original_name={original_name}
+                                overview={overview}
+                                release_date={release_date}
+                                vote_average={vote_average}
+                            />
+                        </SwiperSlide>
+                    )
+                }
+            </Swiper>
+        </>
+    );
 }
 
 const fakeResponse = [
