@@ -1,54 +1,154 @@
 .swiper {
   width: 100%;
+  height: fit-content;
 
-  .swiper-slide{
-    height: 520px;
+  .swiper-slide {
     border-radius: 15px;
     width: 920px;
+    width: 80%;
     overflow: hidden;
     position: relative;
   }
-  .slideBoxInfo{
+
+  img {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    object-fit: contain;
+
+  }
+
+  .slideBoxInfo {
     position: absolute;
     height: 100%;
-    width: 100%;
+    width: fit-content;
     top: 0;
     left: 0;
-    padding: 0 30px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .swiper-slide img{
-    height: 520px;
-    object-fit: contain;
 
-  }
   .slideBoxDate,
   .slideBoxTitle {
-    width: 400px;
+    width: 45%;
     text-shadow: 0 0 20px rgb(0, 0, 0), 0 0 20px rgb(0, 0, 0), 0 0 20px rgb(0, 0, 0);
   }
 
   .slideBoxTitle {
     text-align: center;
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 5px;
-      text-shadow: 0 0 20px rgb(0, 0, 0), 0 0 20px rgb(0, 0, 0);
-    }
-    /* background-color: red; */
+  }
+
+  h2 {
+    font-size: 2rem;
+    /* font-size: 2.2vw; */
+    margin-bottom: 5px;
+    text-shadow: 0 0 20px rgb(0, 0, 0), 0 0 20px rgb(0, 0, 0);
   }
 
   .slideBoxDate {
-    margin-top: 10px;
+    margin-top: 5px;
     display: flex;
     justify-content: center;
     gap: 20px;
-    /* background-color: red; */
-  }
 
+    p:not(.continue) {
+
+      display: flex;
+      align-items: center;
+
+      svg {
+
+        width: 1rem;
+        margin-right: 5px;
+      }
+    }
+  }
+  .continue{
+    display: none;
+  }
   img {
     width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .swiper {
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+
+      svg {
+        height: 0.8rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .swiper {
+    h2 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-size: 0.6rem;
+
+      svg {
+        height: 0.6rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .swiper {
+    .swiper-slide {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .swiper {
+    .slideBoxTitle {
+      p:not(.continue) {
+      height: 45px;
+      overflow: hidden;
+      position: relative;
+    }
+    .continue{
+      display: block;
+    }
+  }
+  }
+}
+
+@media (max-width: 425px) {
+  .swiper {
+    .slideBoxTitle {
+      width: fit-content;
+
+      h2 {
+        font-size: 1rem;
+      }
+
+      p {
+        display: none;
+      }
+      .continue{
+        display: none;
+      }
+    }
+
+    .slideBoxDate {
+      margin-top: 0;
+      width: fit-content;
+      gap: 10px;
+    }
   }
 }

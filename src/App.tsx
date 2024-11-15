@@ -8,6 +8,8 @@ export default function App() {
         <>
             <SlideMovies />
             <SectionMovies />
+            <SectionMovies />
+            <SectionMovies />
         </>
     )
 }

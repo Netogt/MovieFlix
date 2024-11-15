@@ -1,23 +1,23 @@
 .SectionMovies {
-    padding: 20px 0;
-    /* background-color: green; */
-    
-    .movieList {        
-        position: relative;
+    padding-top: 40px;
 
-        div{
+    .movieList {
+        position: relative;
+     
+        div {
             display: flex;
             margin-top: 10px;
             list-style: none;
             align-items: center;
             gap: 30px;
             overflow-x: scroll;
-            &::-webkit-scrollbar{
-                background: none;
+
+            &::-webkit-scrollbar {
+                display: none;
             }
         }
-       
-        button{
+
+        button {
             height: 300px;
             width: 20px;
             border: none;
@@ -29,19 +29,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            &:hover{
+
+            &:hover {
                 background-color: rgba(35, 35, 35, 0.66);
             }
         }
     }
-    .buttonLeft{
+
+    .buttonLeft {
         left: 0;
-        
     }
-    .buttonRight{
+
+    .buttonRight {
         right: 0;
-        
     }
+
     .moviePoster {
         border-radius: 15px;
         position: relative;
@@ -52,44 +54,52 @@
         justify-content: center;
         overflow: hidden;
         background-color: black;
-        &:hover .movieInfo{
+
+        &:hover .movieInfo {
             display: block;
         }
-        &:hover img{
+
+        &:hover img {
             filter: blur(3px);
             height: 110%;
             opacity: 0.5;
         }
+
         img {
             height: 100%;
             box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
             transition: 0.2s;
-           
+
         }
-        .movieInfo{
+
+        .movieInfo {
             position: absolute;
             bottom: 0;
             height: 150px;
             padding: 0 10px;
             display: none;
-            h3{
+
+            h3 {
                 font-size: 1rem;
                 margin-bottom: 5px;
             }
-            & > span{
+
+            &>span {
                 display: flex;
                 gap: 10px;
                 margin-bottom: 5px;
             }
-            p{  
+
+            p {
                 font-size: 0.8rem;
             }
-            .overViewMovie{
+
+            .overViewMovie {
                 overflow: hidden;
                 width: 180px;
                 height: 60px;
             }
         }
-     
+
     }
 }
