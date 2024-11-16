@@ -3,7 +3,7 @@
 
     .movieList {
         position: relative;
-     
+
         div {
             display: flex;
             margin-top: 10px;
@@ -79,6 +79,7 @@
             padding: 0 10px;
             text-align: center;
             display: none;
+
             h3 {
                 font-size: 1rem;
                 margin-bottom: 5px;
@@ -89,7 +90,8 @@
                 justify-content: center;
                 gap: 10px;
                 margin-bottom: 5px;
-                svg{
+
+                svg {
                     width: 0.8rem;
                     margin-right: 5px;
                 }
@@ -108,30 +110,51 @@
     }
 }
 
-@media (max-width: 920px){
+@media (max-width: 920px) {
     .SectionMovies {
         .movieList {
             div {
                 gap: 20px;
             }
         }
-        .moviePoster{
+
+        .moviePoster {
             height: 250px;
             min-width: 166px;
         }
     }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .SectionMovies {
         .movieList {
             div {
                 gap: 10px;
             }
         }
-        .moviePoster{
+
+        .moviePoster {
             height: 200px;
             min-width: 133px;
+
+            .movieInfo {
+   
+                h3 {
+                    font-size: 0.8rem;
+                }
+    
+                &>span {
+                    svg{
+                        width: 0.6rem;
+                    }
+                }
+    
+                p {
+                    font-size: 0.6rem;
+                }
+    
+            }
         }
+
     }
 }
