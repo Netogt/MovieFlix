@@ -9,7 +9,7 @@ export default function App() {
             <SlideMovies />
             <SectionMovies category="Todos"/>
             <SectionMovies category="Filmes"/>
-            <SectionMovies category="Séries"/>
+            <SectionMovies category="Programas"/>
         </>
     )
 }

@@ -23,7 +23,7 @@ export default function useGetMovies(): returnUseGetMovies {
             case "Filmes":
                 url = urls[2]
                 break
-            case "Séries":
+            case "Programas":
                 url = urls[3]
                 break
             default:

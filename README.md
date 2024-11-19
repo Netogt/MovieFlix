@@ -1,50 +1,37 @@
-# React + TypeScript + Vite
+# MovieFlix
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+<p align="center">
+  <img  alt="Layout da aplicação" width="100%" src="./public/Screenshot 2024-11-18 223330.png" />
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrição
+Uma aplicação que faz requisições a uma API REST [(TMDB) API.](https://developer.themoviedb.org/reference/intro/getting-started), e exibe na tela listas com as informações dos filmes e series retornados da api.
 
-Currently, two official plugins are available:
+O slide exibe 5 filmes populares, o filme do centro muda a cada 2500 ms. Também é possível alterá-lo arrastando para frente ou para trás. As listas exibem 20 filmes ou séries de acordo com a sua categoria, permitindo avançar ou retroceder os filmes exibidos utilizando os botões nas laterais.   
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Esse projeto foi criado utilizando [React](https://pt-br.reactjs.org/),
+[TypeScript](https://www.typescriptlang.org/) e [Axios](https://github.com/axios/axios) para fazer as requisições. Tem como principal intuito exercitar meus conhecimentos em React e TypeScript.
 
-## Expanding the ESLint configuration
+## Tecnologias Utilizadas
+- React
+- TypeScript
+- Swiper
+- React-Router
+- Html
+- Css
+- JavaScript
+- Axios
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Instruções de Instalação
 
-- Configure the top-level `parserOptions` property like this:
+### Pré-requisitos
+- [Node.js](https://nodejs.org)
+```bash
+# Instalando as dependências
+npm install
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# Executando a aplicação
+npm run dev
 ```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## License
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
