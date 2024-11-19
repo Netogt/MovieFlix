@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState } from 'react';
 import { responseApi, returnUseGetMovies } from '../interfaces/interface';
 import { useNavigate } from 'react-router-dom';
+
 const urls: string[] = [
     "https://api.themoviedb.org/3/movie/popular",
     "https://api.themoviedb.org/3/trending/all/day",
@@ -54,7 +55,6 @@ export default function useGetMovies(): returnUseGetMovies {
             console.error(error)
            navigate('/error')
         })
-
 
     }
     return { movies: list, setMovies: getMovies }

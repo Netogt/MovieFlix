@@ -6,19 +6,22 @@ import "../css/SectionMovies.css";
 
 export default function SectionMovies({ category }: sectionMoviesProps) {
     const {movies, setMovies} = useGetMovies()
+
     useEffect(() => {
         setMovies(category)
     }, [])
+
     const listMv: React.MutableRefObject<null> = useRef(null)
+
     const moveScroll = (direction: string): void => {
         if (!listMv.current) return
-
         const container: HTMLUListElement = listMv.current;
         container.scrollBy({
             left: direction == "right" ? 1000 : -1000,
             behavior: 'smooth'
         })
     }
+    
     return (
         <section className="SectionMovies">
             <h2>{category}</h2>

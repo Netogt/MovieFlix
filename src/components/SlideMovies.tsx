@@ -10,8 +10,8 @@ import useGetMovies from "../hooks/useGetMovies";
 
 export default function SlideMovies() {
     const {movies: posterSlide, setMovies: setPosterSlide} = useGetMovies()
+
     useEffect(() => {
-        if (!setPosterSlide) return
         setPosterSlide()
     }, [])
 

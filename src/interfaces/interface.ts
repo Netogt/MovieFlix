@@ -28,3 +28,13 @@ export interface returnUseGetMovies{
     movies: responseApi[],
     setMovies: (listMovie?: string) => void
 }
+
+export interface PosterSlideMovieProps{
+    backdrop_path: string, 
+    title?: string, 
+    original_name?: string;
+    original_title?: string; 
+    overview: string; 
+    release_date?: string; 
+    vote_average: number;
+}

@@ -1,5 +1,8 @@
-export default function Movie({ movie }: any) {
+import { responseApi as MovieProps } from "../interfaces/interface"
+
+export default function Movie({ movie }: {movie: MovieProps}) {
     const { title, original_name, vote_average, release_date, poster_path, overview } = movie
+
     return (
         <li className="moviePoster">
             <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt="media image" />

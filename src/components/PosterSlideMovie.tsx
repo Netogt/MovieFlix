@@ -1,4 +1,6 @@
-export default function PosterSlideMovie({ backdrop_path, title, original_name, overview, release_date, vote_average }: any) {
+import { PosterSlideMovieProps } from "../interfaces/interface";
+
+export default function PosterSlideMovie({ backdrop_path, title, original_name, overview, release_date, vote_average } : PosterSlideMovieProps) {
 
     return (
         <div className="postSlideMovie" >
