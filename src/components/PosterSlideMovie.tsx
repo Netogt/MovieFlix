@@ -1,4 +1,3 @@
-
 export default function PosterSlideMovie({ backdrop_path, title, original_name, overview, release_date, vote_average }: any) {
 
     return (
@@ -19,7 +18,7 @@ export default function PosterSlideMovie({ backdrop_path, title, original_name, 
                     {release_date && <p>{release_date}</p>}
                 </div>
             </div>
-            <img src={`https://image.tmdb.org/t/p/original/${backdrop_path}`} />
+            <img src={`https://image.tmdb.org/t/p/original/${backdrop_path}`} alt="media image"/>
         </div>
     )
 }

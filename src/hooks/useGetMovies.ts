@@ -1,6 +1,7 @@
 import axios from 'axios'
-import { useEffect, useState } from 'react';
-
+import { useState } from 'react';
+import { responseApi, returnUseGetMovies } from '../interfaces/interface';
+import { useNavigate } from 'react-router-dom';
 const urls: string[] = [
     "https://api.themoviedb.org/3/movie/popular",
     "https://api.themoviedb.org/3/trending/all/day",
@@ -9,9 +10,10 @@ const urls: string[] = [
 ];
 const API_KEY: string = "72e9f555e4b89b2f0dec21e97d00d11f";
 
-export default function useGetMovies(listMovie?: string) {
-    const [list, setList] = useState()
-    useEffect(() => {
+export default function useGetMovies(): returnUseGetMovies {
+    const [list, setList] = useState<responseApi[]>([])
+    const navigate = useNavigate()
+    function getMovies(listMovie?: string): void {
         let url: string
         switch (listMovie) {
             case "Todos":
@@ -27,7 +29,7 @@ export default function useGetMovies(listMovie?: string) {
                 url = urls[0]
                 break
         }
-        if (!url) return;
+
         axios({
             method: "GET",
             url: url,
@@ -38,19 +40,22 @@ export default function useGetMovies(listMovie?: string) {
             headers: {
                 accept: 'application/json'
             }
-        }).then(response =>{ 
-            setList(response.data.results)
-        })
-    }, [])
-    
-    if(list) {
-        if(!listMovie){
-            let newList = []
-            for (let i = 0; i < 5; i++) {
-                newList.push(list[i])   
+        }).then(response => {
+            if (!listMovie) {
+                let newList: responseApi[] = []
+                for (let i = 0; i < 5; i++) {
+                    newList.push(response.data.results[i])
+                }
+                setList(newList)
+            } else {
+                setList(response.data.results)
             }
-            return newList
-        }
-        return list
-    };
+        }).catch((error)=>{
+            console.error(error)
+           navigate('/error')
+        })
+
+
+    }
+    return { movies: list, setMovies: getMovies }
 }

@@ -2,7 +2,7 @@ export default function Movie({ movie }: any) {
     const { title, original_name, vote_average, release_date, poster_path, overview } = movie
     return (
         <li className="moviePoster">
-            <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt="" />
+            <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt="media image" />
             <div className="movieInfo">
                 <h3>{title ? title : original_name}</h3>
                 <span>

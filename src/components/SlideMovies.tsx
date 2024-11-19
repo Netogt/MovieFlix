@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import PosterSlideMovie from "./PosterSlideMovie";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
@@ -9,14 +9,13 @@ import useGetMovies from "../hooks/useGetMovies";
 
 
 export default function SlideMovies() {
-    const [posterSlide, setPosterSlide] = useState([])
-    const listSlide = useGetMovies()
-    if (posterSlide.length == 0) {
-        if (listSlide) {
-            setPosterSlide(listSlide)
-        }
-    }
+    const {movies: posterSlide, setMovies: setPosterSlide} = useGetMovies()
+    useEffect(() => {
+        if (!setPosterSlide) return
+        setPosterSlide()
+    }, [])
 
+    if (posterSlide.length < 5) return
     return (
         <>
             <Swiper
